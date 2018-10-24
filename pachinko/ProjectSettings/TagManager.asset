@@ -9,6 +9,7 @@ TagManager:
   - egg1
   - Dragon
   - dragonArea
+  - pin
   layers:
   - Default
   - TransparentFX

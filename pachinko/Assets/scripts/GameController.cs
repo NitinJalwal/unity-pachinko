@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
     public GameObject pin;
@@ -8,6 +9,9 @@ public class GameController : MonoBehaviour {
     public Transform pinSpawn;
     public int pinCount = 20;
     public int rows = 4;
+    public Text restartText;
+    private bool restart;
+
 
 
 	// Use this for initialization
@@ -29,10 +33,26 @@ public class GameController : MonoBehaviour {
 	        initialY += yOffset;
 	    }
 
+        restart = false;
+        restartText.text = "";
+
 	}
 
-	// Update is called once per frame
-	void Update () {
+	void Update() {
+        if (restart)
+        {
+            if (Input.GetKeyDown (KeyCode.R))
+            {
+                Application.LoadLevel (Application.loadedLevel);
+            }
+        }
+	}
 
+
+
+	// Update is called once per frame
+	public void restartLevel () {
+	        restart = true;
+            restartText.text = "Press R to restart the game";
 	}
 }

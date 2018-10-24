@@ -15,10 +15,21 @@ public class copterMotion : MonoBehaviour {
 
     public Text eggCount;
     public int score = 50;
+    private GameController gameController;
+
 
 	// Use this for initialization
 	void Start () {
         updateScore();
+        GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+        if (gameControllerObject != null)
+                {
+                    gameController = gameControllerObject.GetComponent <GameController>();
+                }
+                if (gameController == null)
+                {
+                    Debug.Log ("Cannot find 'GameController' script");
+                }
 	}
 
 	// Update is called once per frame
@@ -57,6 +68,7 @@ public class copterMotion : MonoBehaviour {
 
 	    if(score == 0) {
 	        eggCount.text = "Game Over!";
+	        gameController.restartLevel();
 	    }
 	}
 }
