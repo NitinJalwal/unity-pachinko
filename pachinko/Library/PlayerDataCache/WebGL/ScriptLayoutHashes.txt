@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-C:/Users/prabhatkashyap/Desktop/Dragon Pachinko
+C:/Users/prabhatkashyap/Desktop/DP
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
